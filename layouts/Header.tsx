@@ -11,7 +11,7 @@ import {
   createStyles,
 } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import { COLOR_OLIVE } from '../utils/constants'
+import { COLOR_OLIVE, COLOR_MUD } from '../utils/constants'
 
 const HEADER_HEIGHT = 60
 const LINKS = [
@@ -40,6 +40,7 @@ const LINKS = [
 const useStyles = createStyles((theme) => ({
   sectionContainer: {
     height: '800px',
+    width: '100vw'
   },
 
   header: {
@@ -96,6 +97,7 @@ const useStyles = createStyles((theme) => ({
     color: COLOR_OLIVE,
     borderColor: COLOR_OLIVE,
     backgroundColor: '#F5F2EB',
+    marginRight: '4px'
   },
 
   bannerContent: {
@@ -104,7 +106,7 @@ const useStyles = createStyles((theme) => ({
 
     '& .mantine-Text-root': {
       fontSize: '18px',
-      color: '#7E4E24',
+      color: COLOR_MUD,
     },
 
     '& h2': {
@@ -154,7 +156,7 @@ const Header = () => {
         <Title order={2} weight={400}><span>Let's do business</span> together!</Title>
         <Text>
           It is a long established fact that a reader will be distracted by the
-          readable content of a pag when looking at its layout.
+          readable content of a page when looking at its layout.
         </Text>
       </Box>
     </BackgroundImage>
