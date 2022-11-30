@@ -12,6 +12,7 @@ import {
   BackgroundImage,
 } from '@mantine/core'
 import { COLOR_MUD } from '../utils/constants'
+import { SectionDetails } from '../components'
 
 const useStyles = createStyles(() => ({
   section: {
@@ -31,44 +32,65 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Grid gutter="md" mt={32} p={16}>
-          <Grid.Col xs={6}>
+        <Grid mt={32}>
+          <Grid.Col xs={6} p={16}>
             <Image
               src="/olive-oil-bottle.jpg"
               alt="olive oil in a bottle"
               height={300}
             />
           </Grid.Col>
-          <Grid.Col xs={6}>
-            <Stack>
-              <Box>
-                <Image src="/yellow-brush.svg" width={140} />
-                <Title color={COLOR_MUD}>WHO WE ARE</Title>
-              </Box>
-              <Text>
-                Olives is proud to deliver high quality standards. In natural
+          <Grid.Col xs={6} p={16}>
+            <SectionDetails
+              title="WHO WE ARE"
+              description="Olives is proud to deliver high quality standards. In natural
                 environment production, delivery, and flexibility. Organic bio
-                oil in a special production from our farm.
-              </Text>
-              <Link href="#">
-                <Text color={COLOR_MUD}>READ MORE</Text>
-              </Link>
-            </Stack>
+                oil in a special production from our farm."
+              ctaLabel="READ MORE"
+            />
           </Grid.Col>
-          <Grid.Col xs={12} mt={32} className={classes.section}>
+          <Grid.Col xs={12} mt={32} className={classes.section} p={16}>
             <Box>
               <Image src="/yellow-brush.svg" width={140} />
               <Title color={COLOR_MUD}>WHAT WE DO</Title>
             </Box>
-            <Image src="/olive-tree.jpg" px={16} height={400} />
+            <Image src="/olive-tree.jpg" height={400} />
           </Grid.Col>
-          <Grid.Col xs={12}>
-            <BackgroundImage src="/quote-bg.png">
-              <Text>
-                "Health is wealth, it is always better when it is natural."
-              </Text>
-              <Text>@crestodina </Text>
-            </BackgroundImage>
+          <BackgroundImage src="/quote-bg.png" sx={{ height: '400px' }}>
+            <Grid.Col xs={12} p={16}>
+              <div
+                style={{
+                  height: '400px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <Text size={48} align="center" color={COLOR_MUD}>
+                  "Health is wealth, it is always better when it is natural."
+                </Text>
+                <Text size={24} align="center" color={COLOR_MUD}>
+                  @crestodina{' '}
+                </Text>
+              </div>
+            </Grid.Col>
+          </BackgroundImage>
+          <Grid.Col xs={6} p={16}>
+            <Image
+              src="/olive-oil-bottle.jpg"
+              alt="olive oil in a bottle"
+              height={300}
+            />
+          </Grid.Col>
+          <Grid.Col xs={6} p={16}>
+            <SectionDetails
+              title="Product"
+              description="Olives is proud to deliver high quality standards. In natural
+                environment production, delivery, and flexibility. Organic bio
+                oil in a special production from our farm."
+              ctaLabel="READ MORE"
+            />
           </Grid.Col>
         </Grid>
       </main>
